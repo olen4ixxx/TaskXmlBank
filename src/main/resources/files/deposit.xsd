@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="accounts"
+        xmlns:tns="accounts"
+        elementFormDefault="qualified">
+    <element name="accounts">
+        <complexType>
+            <sequence>
+                <element ref="tns:account" minOccurs="2" maxOccurs="100"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="account">
+        <sequence>
+            <element name="bank-name" type="string"/>
+            <element name="depositor-name" type="tns:depositorName"/>
+            <element name="currency" type="tns:currency"/>
+            <element name="registration-date" type="date"/>
+            <element name="amount" type="tns:amount"/>
+        </sequence>
+        <attribute name="id" type="tns:accountID" use="required"/>
+        <attribute name="occupation" use="optional" default="IT"/>
+    </complexType>
+
+    <simpleType name="depositorName">
+        <restriction base="string">
+            <pattern value="[A-Z]([a-z])+[\s][A-Z]([a-z])+"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="currency">
+        <restriction base="string">
+            <enumeration value="USD"/>
+            <enumeration value="EUR"/>
+            <enumeration value="BYN"/>
+            <enumeration value="RUB"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="amount">
+        <restriction base="decimal">
+            <fractionDigits value="2"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="accountID">
+        <restriction base="ID">
+            <pattern value="[A-Z0-9]{4}"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="checking-account">
+        <complexContent>
+            <extension base="tns:account">
+                <sequence>
+                    <element name="payment-system" type="tns:paymentSystem"/>
+                    <element name="cashback" type="tns:cashback"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="paymentSystem">
+        <restriction base="string">
+            <enumeration value="Visa"/>
+            <enumeration value="MasterCard"/>
+            <enumeration value="UnionPay"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="cashback">
+        <restriction base="nonNegativeInteger">
+            <minInclusive value="0"/>
+            <maxInclusive value="5"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="deposit">
+        <complexContent>
+            <extension base="tns:account">
+                <sequence>
+                    <element name="profitability" type="tns:profitability"/>
+                    <element name="deposit-term" type="positiveInteger"/>
+                    <element name="callable" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="profitability">
+        <restriction base="nonNegativeInteger">
+            <minInclusive value="5"/>
+            <maxInclusive value="10"/>
+        </restriction>
+    </simpleType>
+
+    <element name="account" type="tns:account" abstract="true"/>
+    <element name="checking-account" type="tns:checking-account" substitutionGroup="tns:account"/>
+    <element name="deposit" type="tns:deposit" substitutionGroup="tns:account"/>
+</schema>

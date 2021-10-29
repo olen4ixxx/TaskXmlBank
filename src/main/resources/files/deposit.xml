@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accounts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="accounts"
+          xsi:noNamespaceSchemaLocation="deposit.xsd">
+    <checking-account id="BY11" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY12">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+
+    <checking-account id="BY13" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY14">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+
+    <checking-account id="BY15" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY16">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+
+    <checking-account id="BY17" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY18">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+
+    <checking-account id="BY19" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY20">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+
+    <checking-account id="BY21" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY22">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+
+    <checking-account id="BY23" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY24">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+
+    <checking-account id="BY25" occupation="Medicine">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.5</amount>
+        <payment-system>Visa</payment-system>
+        <cashback>2</cashback>
+    </checking-account>
+
+    <deposit id="BY26">
+        <bank-name>ALFA</bank-name>
+        <depositor-name>Le Nas</depositor-name>
+        <currency>USD</currency>
+        <registration-date>2011-11-11</registration-date>
+        <amount>100.51</amount>
+        <profitability>5</profitability>
+        <deposit-term>12</deposit-term>
+        <callable>false</callable>
+    </deposit>
+</accounts>

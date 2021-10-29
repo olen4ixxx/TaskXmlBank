@@ -1,0 +1,40 @@
+29-10-2021 17:07:17 [main] WARN  io.olen4ixxx.bank.validator.BankXmlErrorHandler - 16 : 68-p-props-correct.2.1: In the declaration of 'element', the value of 'minOccurs' is '2', but it must not be greater than the value of 'maxOccurs', which is '1'.
+29-10-2021 17:08:26 [main] WARN  io.olen4ixxx.bank.validator.BankXmlErrorHandler - 16 : 68-p-props-correct.2.1: In the declaration of 'element', the value of 'minOccurs' is '2', but it must not be greater than the value of 'maxOccurs', which is '1'.
+29-10-2021 17:08:26 [main] ERROR io.olen4ixxx.bank.validator.BankSchemaValidator - SAXParseException
+29-10-2021 17:10:52 [main] WARN  io.olen4ixxx.bank.validator.BankXmlErrorHandler - 16 : 68-p-props-correct.2.1: In the declaration of 'element', the value of 'minOccurs' is '2', but it must not be greater than the value of 'maxOccurs', which is '1'.
+29-10-2021 17:10:52 [main] ERROR io.olen4ixxx.bank.validator.BankSchemaValidator - SAXParseException
+29-10-2021 17:28:57 [main] ERROR io.olen4ixxx.bank.validator.BankSchemaValidator - Check the file ()
+java.io.FileNotFoundException: D:\Projects\TaskXmlBank\files\deposit.xml (Системе не удается найти указанный путь)
+	at java.io.FileInputStream.open0(Native Method) ~[?:?]
+	at java.io.FileInputStream.open(FileInputStream.java:219) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:112) ~[?:?]
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86) ~[?:?]
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:184) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:652) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:860) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824) ~[?:?]
+	at com.sun.org.apache.xerces.internal.jaxp.validation.StreamValidatorHelper.validate(StreamValidatorHelper.java:176) ~[?:?]
+	at com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorImpl.validate(ValidatorImpl.java:115) ~[?:?]
+	at javax.xml.validation.Validator.validate(Validator.java:124) ~[?:?]
+	at io.olen4ixxx.bank.validator.BankSchemaValidator.validateXml(BankSchemaValidator.java:35) [classes/:?]
+	at io.olen4ixxx.bank.main.Main.main(Main.java:24) [classes/:?]
+29-10-2021 17:30:23 [main] ERROR io.olen4ixxx.bank.validator.BankSchemaValidator - Check the file ()
+java.io.FileNotFoundException: D:\Projects\TaskXmlBank\files\deposit.xml (Системе не удается найти указанный путь)
+	at java.io.FileInputStream.open0(Native Method) ~[?:?]
+	at java.io.FileInputStream.open(FileInputStream.java:219) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:112) ~[?:?]
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86) ~[?:?]
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:184) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:652) ~[?:?]
+	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:860) ~[?:?]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824) ~[?:?]
+	at com.sun.org.apache.xerces.internal.jaxp.validation.StreamValidatorHelper.validate(StreamValidatorHelper.java:176) ~[?:?]
+	at com.sun.org.apache.xerces.internal.jaxp.validation.ValidatorImpl.validate(ValidatorImpl.java:115) ~[?:?]
+	at javax.xml.validation.Validator.validate(Validator.java:124) ~[?:?]
+	at io.olen4ixxx.bank.validator.BankSchemaValidator.validateXml(BankSchemaValidator.java:37) [classes/:?]
+	at io.olen4ixxx.bank.main.Main.main(Main.java:24) [classes/:?]
+29-10-2021 17:35:19 [main] INFO  io.olen4ixxx.bank.validator.BankSchemaValidator - file:/D:/Projects/TaskXmlBank/target/classes/files/deposit.xml
