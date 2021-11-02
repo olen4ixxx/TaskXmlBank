@@ -1,26 +1,30 @@
 package io.olen4ixxx.bank.entity;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public abstract class Account {
     private String id;
     private String occupation;
     private String bankName;
     private String depositorName;
-    private LocalDate date;
+    private BankCurrency currency;
+    private LocalDate registrationDate;
     private double amount;
 
-    public Account() { //todo
-        //default?
+    public static final String DEFAULT_OCCUPATION = "IT";
+
+    protected Account() {
+        occupation = DEFAULT_OCCUPATION;
     }
 
-    public Account(String id, String occupation, String bankName, String depositorName, LocalDate date, double amount) {
+    protected Account(String id, String occupation, String bankName, String depositorName,
+                      BankCurrency currency, LocalDate registrationDate, double amount) {
         this.id = id;
         this.occupation = occupation;
         this.bankName = bankName;
         this.depositorName = depositorName;
-        this.date = date;
+        this.currency = currency;
+        this.registrationDate = registrationDate;
         this.amount = amount;
     }
 
@@ -56,12 +60,20 @@ public abstract class Account {
         this.depositorName = depositorName;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public BankCurrency getCurrency() {
+        return currency;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setCurrency(BankCurrency currency) {
+        this.currency = currency;
+    }
+
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     public double getAmount() {
@@ -73,21 +85,64 @@ public abstract class Account {
     }
 
     @Override
-    public boolean equals(Object o) { //todo
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Account account = (Account) o;
-        return Double.compare(account.amount, amount) == 0 && Objects.equals(id, account.id) && Objects.equals(occupation, account.occupation) && Objects.equals(bankName, account.bankName) && Objects.equals(depositorName, account.depositorName) && Objects.equals(date, account.date);
+        return Double.compare(account.amount, amount) == 0
+                && id.equals(account.id)
+                && occupation.equals(account.occupation)
+                && bankName.equals(account.bankName)
+                && depositorName.equals(account.depositorName)
+                && currency == account.currency
+                && registrationDate.equals(account.registrationDate);
     }
 
     @Override
-    public int hashCode() { //todo
-        return Objects.hash(id, occupation, bankName, depositorName, date, amount);
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + stringHash(id);
+        result = prime * result + stringHash(occupation);
+        result = prime * result + stringHash(bankName);
+        result = prime * result + stringHash(depositorName);
+        result = prime * result + currency.hashCode();
+        result = prime * result + dateHash(registrationDate);
+        long bits = Double.doubleToLongBits(amount);
+        result = prime * result + (int) (bits ^ (bits >>> 32));
+        return result;
     }
 
     @Override
     public String toString() {
-        return String.format("Account{id=%s, occupation=%s, bankName=%s, depositorName=%s, date=%s, amount=%s},",
-                id, occupation, bankName, depositorName, date, amount);
+        return String.format(
+                "Account{id=%s, occupation=%s, bankName=%s, depositorName=%s, currency=%s, registrationDate=%s, amount=%s},",
+                id, occupation, bankName, depositorName, currency, registrationDate, amount);
+    }
+
+    private int stringHash(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        int hash = 0;
+        char[] array = s.toCharArray();
+        for (int i = 0; i < array.length; i++) {
+            hash += Math.pow(31, array.length - i - 1.0) * array[i];
+        }
+        return hash;
+    }
+
+    private int dateHash(LocalDate date) {
+        if (date == null) {
+            return 0;
+        }
+        int yearValue = date.getYear();
+        int monthValue = date.getMonthValue();
+        int dayValue = date.getDayOfMonth();
+        return (yearValue & 0xFFFFF800) ^ ((yearValue << 11) + (monthValue << 6) + (dayValue));
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <accounts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xmlns="accounts"
-          xsi:noNamespaceSchemaLocation="deposit.xsd">
+          xsi:noNamespaceSchemaLocation="depositTest.xsd">
     <checking-account occupation="Medicine" id="BY01">
         <bank-name>ALFA</bank-name>
         <depositor-name>Le Na</depositor-name>

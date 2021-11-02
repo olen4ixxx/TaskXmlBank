@@ -39,10 +39,10 @@ public class BankSchemaValidator {
             throw new CustomBankException("Check the file", e);
         } catch (SAXParseException e) {
             handler.error(e);
-            logger.error("SAXParseException", e);
+            logger.error("File is not valid", e);
             return false;
         } catch (SAXException e) {
-            logger.error("SAXException", e);
+            logger.error("File is not valid", e);
             return false;
         }
         return true;

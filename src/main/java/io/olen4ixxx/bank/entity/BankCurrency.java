@@ -1,6 +1,6 @@
 package io.olen4ixxx.bank.entity;
 
-public enum Currency {
+public enum BankCurrency {
     USD,
     EUR,
     BYN,

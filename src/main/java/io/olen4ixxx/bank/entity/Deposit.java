@@ -1,7 +1,6 @@
 package io.olen4ixxx.bank.entity;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class Deposit extends Account {
     private int profitability;
@@ -11,9 +10,9 @@ public class Deposit extends Account {
     public Deposit() {
     }
 
-    public Deposit(String id, String occupation, String bankName, String depositorName,
+    public Deposit(String id, String occupation, String bankName, String depositorName, BankCurrency currency,
                    LocalDate date, double amount, int profitability, int depositTerm, boolean callable) {
-        super(id, occupation, bankName, depositorName, date, amount);
+        super(id, occupation, bankName, depositorName, currency, date, amount);
         this.profitability = profitability;
         this.depositTerm = depositTerm;
         this.callable = callable;
@@ -44,25 +43,38 @@ public class Deposit extends Account {
     }
 
     @Override
-    public boolean equals(Object o) { //todo
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         Deposit deposit = (Deposit) o;
-        return profitability == deposit.profitability && depositTerm == deposit.depositTerm && callable == deposit.callable;
+        return profitability == deposit.profitability
+                && depositTerm == deposit.depositTerm
+                && callable == deposit.callable;
     }
 
     @Override
-    public int hashCode() { //todo
-        return Objects.hash(super.hashCode(), profitability, depositTerm, callable);
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + profitability;
+        result = prime * result + depositTerm;
+        int callableHash = callable ? 1 : 0;
+        result = prime * result + callableHash;
+        return result;
     }
 
     @Override
-    public String toString() { //todo
-        return "Deposit{" +
-                "profitability=" + profitability +
-                ", depositTerm=" + depositTerm +
-                ", callable=" + callable +
-                '}';
+    public String toString() {
+        return String.format("Account{id=%s, occupation=%s, bankName=%s, depositorName=%s, currency=%s, " +
+                        "registrationDate=%s, amount=%s, profitability=%s, depositTerm=%s, callable=%s},",
+                getId(), getOccupation(), getBankName(), getDepositorName(), getCurrency(),
+                getRegistrationDate(), getAmount(), profitability, depositTerm, callable);
     }
 }
